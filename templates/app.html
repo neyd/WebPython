@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/sweetalerts2/sweetalert2.min.css">
+    <script src="../static/fontawesome/js/all.min.js"></script>
+    <script src="../static/jquery.min.js"></script>
+    <script src="../static/sweetalerts2/sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../static/tasks.js"></script>
+</head>
+<body>
+    <div class="custom-block hello-block">
+        <h1>Hi, {{ user.username }}!</h1>
+        <button id="openAddForm" class="custom-button">Add Task</button>
+    </div>
+
+    <div class="custom-block">
+        <div class="task-list" id="tasks">
+
+        </div>
+    </div>
+
+{% extends "modals.html" %}
+</body>
+</html>

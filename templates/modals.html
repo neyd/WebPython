@@ -1,0 +1,20 @@
+<div class="add-form" id="addForm">
+    <form class="form-signin">
+        <label for="taskName">Name</label>
+        <textarea name="taskName" id="taskName" class="form-control" placeholder="Enter your task please" required autofocus></textarea>
+        <button id="btnAddTask" class="custom-button" type="submit">Add Task</button>
+        <button class="custom-button-error btnCloseModal" type="button">Back</button>
+    </form>
+</div>
+
+<div class="add-form" id="addSubTaskForm">
+    <form class="form-signin">
+        <input type="hidden" id="taskIdForSubtask" name="taskIdForSubtask" value="">
+        <label for="curTaskName">For task</label>
+        <textarea type="text" class="form-control" id="curTaskName" disabled="disabled"></textarea>
+        <label for="subTaskName">SubTask</label>
+        <textarea name="subTaskName" id="subTaskName" class="form-control" placeholder="Enter your subtask please" required autofocus></textarea>
+        <button id="btnAddSubTask" class="custom-button" type="submit">Add SubTask</button>
+        <button class="custom-button-error btnCloseModal" type="button">Back</button>
+    </form>
+</div>

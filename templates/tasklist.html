@@ -1,0 +1,52 @@
+{% if tasks %}
+    {% for task in tasks %}
+        <div class="one-task" data-taskId="{{task.taskId}}">
+            <div class="first_lane status">{{ task.completed }}</div>
+            <div class="first_lane name"> {{ task.taskName }}</div>
+            <div class="first_lane actions"><div class="count_subtasks"></div><div class="sub_show_status"><i class="fa fa-angle-down"></i> </div> </div>
+            <div class="subtasks">
+                <div class="task-info">
+                    <div class="additional">
+                        <div class="add-one date-created">
+                            <span>Created</span>
+                            <span class="time">
+                                {{task.dateCreated}}
+                            </span>
+                        </div>
+                        <div class="add-one sub-len">
+                            <span>Count SubTasks</span>
+                            <span class="time count">
+                                {{task.count_sub}}
+                            </span>
+                        </div>
+                        <div class="add-one sub-len">
+                            <span>Creator</span>
+                            <span class="time count">
+                                {{task.creator}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button class="custom-button addNewSubTask" type="button" data-taskId="{{task.taskId}}" data-taskname="{{task.taskName}}">
+                            New SubTask
+                        </button>
+                        <button class="custom-button-error removeTask" type="button" data-taskId="{{task.taskId}}" data-taskname="{{task.taskName}}">
+                            Remove Task
+                        </button>
+                    </div>
+                </div>
+                <div class="sublist-block">
+                    {% for subtask in task.sublist %}
+                        <div class="one-subtask {{subtask.class}}" data-subTaskId="{{subtask.id}}" data-subtaskname="{{subtask.name}}">
+                            <div class="sub-status"><input type="checkbox" class="check-status" {{subtask.sub_completed}}></div>
+                            <div class="sub-name">{{subtask.name}}</div>
+                            <div class="custom-button-error removeSubTask" data-subTaskId="{{subtask.id}}" >
+                                <i class="fa fa-trash"></i>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
